@@ -1,10 +1,10 @@
 import './profile.scss'
-const Profile = () => {
+function Profile(props) {
     return (
-        <div className='Profile'>
+        <div >
             
         </div>
     )
 }
 
-export default Profile
+export default Profile;

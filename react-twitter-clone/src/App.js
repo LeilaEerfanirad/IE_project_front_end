@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes, Switch } from 'react-router-dom';
-import { LeftPane , Profile } from './components'
+import { LeftPane , Profile , Login } from './components'
 import './App.scss';
 
 const App = () => {
@@ -8,8 +8,10 @@ const App = () => {
       <div className="app">
         <LeftPane />
         <Routes>
-          <Route path="/" exact ></Route>
-          <Route path="/explore" element={<Profile />}>explore</Route>
+          <Route path="/" exact></Route>
+          <Route path="/login" element={<Login />} />
+          {/* <Route path="/signup" element={<SignUp />} /> */}
+          {/* <Route path="/explore" element={<Profile />}>explore</Route> */}
           <Route path="/notifications">Home</Route>
           <Route path="/profile">Home</Route>
           
