@@ -1,5 +1,34 @@
-.left-pane {
-    background-color: #1e81b0;
+.leftPane {
+    display: flex;
+    padding: 5%;
+    flex-direction: column;
+    background-color: rgba(23, 63, 100, 0.48);
     color: #fff;
+    text-align: left;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
     min-height: 100vh;
+    // width: 30%;
+    &__container{
+        
+        &--leftNav{
+            // text-decoration-style: none;
+            margin-top: 10%;
+            color: #fff;
+            text-decoration:inherit;
+            text-decoration-line: none;
+            display: flex;
+            flex-direction: column;
+    
+        }
+
+        &--button{
+            background-color: cadetblue;
+            border-radius: 10px;
+            margin-top: 20%;
+            padding: 5%;
+        }
+    }
 }
+
