@@ -9,23 +9,27 @@
     font-size: 14px;
     line-height: 22px;
     min-height: 100vh;
-    // width: 30%;
     &__container{
         
         &--leftNav{
-            // text-decoration-style: none;
             margin-top: 10%;
             color: #fff;
+            align-items: center;
             text-decoration:inherit;
             text-decoration-line: none;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
     
+        }
+
+        &--icon{
+            padding: 5px;
         }
 
         &--button{
             background-color: cadetblue;
-            border-radius: 10px;
+            border: 0px;
+            border-radius: 20px;
             margin-top: 20%;
             padding: 5%;
         }
