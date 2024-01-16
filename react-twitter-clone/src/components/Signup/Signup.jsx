@@ -21,7 +21,7 @@ const Signup = () => {
         e.preventDefault();
         
         // Send the Signup data to the backend (replace this with your actual API call)
-        fetch('your-backend-Signup-endpoint', {
+        fetch('register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -1,8 +1,10 @@
 .loginContainer {
     display: flex;
     flex-direction: column;
+    width: 70%;
     align-items: center;
-     margin: 50px;
+    text-align: center;
+    margin-top: 10%;
 
     form {
         display: flex;
@@ -13,7 +15,7 @@
         }
 
         input {
-            margin: 15px;
+            margin: 10px;
             padding: 8px;
             border: 1px solid #ccc;
             border-radius: 4px;
@@ -21,7 +23,7 @@
         }
 
         button {
-            margin: 15px;
+            margin: 10px;
             padding: 10px;
             background-color: #007BFF;
             color: #fff;

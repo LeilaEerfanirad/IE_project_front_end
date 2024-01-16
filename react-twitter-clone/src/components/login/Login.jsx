@@ -17,7 +17,7 @@ const Login = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Send the login data to the backend (replace this with your actual API call)
-        fetch('your-backend-login-endpoint', {
+        fetch('login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
