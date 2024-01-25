@@ -14,14 +14,14 @@ const Login = () => {
         });
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Send the login data to the backend (replace this with your actual API call)
-        fetch('login', {
+    function handleSubmit () {
+        // e.preventDefault();
+        
+        fetch('http://localhost:3000/login', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
+            // headers: {
+            //     'Content-Type': 'application/json',
+            // },
             body: JSON.stringify(formData),
         })
         .then(response => response.json())
@@ -38,7 +38,7 @@ const Login = () => {
     return (
         <div className="loginContainer">
             <h2>Login</h2>
-            <form onSubmit={handleSubmit}>
+            <form >
                 <label htmlFor="username" ></label>
                 <input
                     placeholder='UserName'
@@ -61,7 +61,7 @@ const Login = () => {
                     required
                 />
 
-                <button type="submit">Login</button>
+                <button type="submit" onClick={handleSubmit}>Login</button>
             </form>
         </div>
     );
