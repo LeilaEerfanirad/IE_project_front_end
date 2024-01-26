@@ -16,23 +16,16 @@ const Login = () => {
 
     function handleSubmit () {
         // e.preventDefault();
-        
-        fetch('http://localhost:3000/login', {
-            method: 'POST',
-            // headers: {
-            //     'Content-Type': 'application/json',
-            // },
-            body: JSON.stringify(formData),
+        console.log('here')
+        fetch(
+            'http://localhost:3000/login?username=${formData.username}&password=${formData.password}'
+            , {
+            method: 'POST'
         })
         .then(response => response.json())
-        .then(data => {
-            // Handle the response from the backend (e.g., set user authentication state)
-            console.log(data);
-        })
-        .catch(error => {
-            // Handle errors
-            console.error('Error:', error);
-        });
+        .then(data => console.log(data))
+        .catch(error => console.error(error));
+        
     };
 
     return (

@@ -1,0 +1,19 @@
+.userProfileContainer{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    align-items: center;
+    text-align: center;
+    margin-top: 10%;
+
+    &__profileHeader{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        background-color: antiquewhite;
+    }
+    &__profileFooter{
+        background-color: aqua;
+    }
+    
+}

@@ -20,21 +20,16 @@ const Signup = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         
-        // Send the Signup data to the backend (replace this with your actual API call)
-        fetch('register', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
+        fetch(
+            'http://localhost:3000/register?username=${formData.username}&password=${formData.password}&email=${formData.email}&firstname=${formData.firstName}&lastname=${formData.lastName}'
+            , {
+            method: 'POST'
         })
         .then(response => response.json())
         .then(data => {
-            // Handle the response from the backend (e.g., set user authentication state)
             console.log(data);
         })
         .catch(error => {
-            // Handle errors
             console.error('Error:', error);
         });
     };

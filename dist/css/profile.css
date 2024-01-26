@@ -1,0 +1,8 @@
+.userProfileContainer {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  align-items: center;
+  text-align: center;
+  margin-top: 10%;
+}/*# sourceMappingURL=profile.css.map */
