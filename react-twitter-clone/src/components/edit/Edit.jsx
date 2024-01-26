@@ -1,9 +1,10 @@
 import React , { useState } from 'react'
-
+import './edit.scss'
 function Edit() {
     const [formData, setFormData] = useState({
         username: '',
-        password: ''
+        firstname: '',
+        lastname: ''
     });
 
     const handleChange = (e) => {
@@ -15,10 +16,10 @@ function Edit() {
     };
 
     function handleSubmit () {
-        // e.preventDefault();
+        
         console.log('here')
         fetch(
-            'http://localhost:3000/login?username=${formData.username}&password=${formData.password}'
+            'http://localhost:3000/edit?username=${formData.username}&firstname=${formData.firstname}&lastname=${formData.lastname}'
             , {
             method: 'POST'
         })
@@ -29,34 +30,41 @@ function Edit() {
     };
 
     return (
-        <div className="loginContainer">
-            <h2>Login</h2>
-            <form >
-                <label htmlFor="username" ></label>
+        <div className='editContainer'>
+            <h2>Edit</h2>
+            <form>
+                
                 <input
-                    placeholder='UserName'
+                placeholder='Username'
+                type='text'
+                id='username'
+                name='username'
+                value={formData.username}
+                onChange={handleChange}
+                required
+                />
+                <input
+                    placeholder="First Name"
                     type="text"
-                    id="username"
-                    name="username"
-                    value={formData.username}
+                    id="firstName"
+                    name="firstName"
+                    value={formData.firstName}
                     onChange={handleChange}
                     required
                 />
-
-                <label htmlFor="password"></label>
                 <input
-                    placeholder='Password'
-                    type="password"
-                    id="password"
-                    name="password"
-                    value={formData.password}
+                    placeholder='Last Name'
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    value={formData.firstName}
                     onChange={handleChange}
                     required
                 />
-
-                <button type="submit" onClick={handleSubmit}>Login</button>
+                <button type="submit">Edit</button>
             </form>
-    </div>
+            
+        </div>
     );
 }
 

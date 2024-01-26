@@ -1,4 +1,4 @@
-// import './profile.scss'
+import './profile.scss'
 import React, { useEffect, useState } from 'react';
 
 import { NavLink } from 'react-router-dom'
@@ -11,9 +11,9 @@ const Profile = (props) => {
     return (
     <div className="userProfileContainer">
         <div className="userProfileContainer__profileHeader">
-            <div className="firstRow">
+            <div className="userProfileContainer__profileHeader--firstRow">
                 <h2>{props.item.firstname} {props.item.lastname}</h2>
-                <button onClick={handleEdit}>Edit Profile</button>
+                <button onClick={handleEdit} className='userProfileContainer__button'>Edit Profile</button>
             </div>
             
             <p><strong>Username:</strong> {props.item.username}</p>

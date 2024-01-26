@@ -1,22 +1,23 @@
-.loginContainer {
+.editContainer {
     display: flex;
-    font-size: 1.2em;
     flex-direction: column;
     width: 60%;
+    font-size: 1.2em;
     align-items: center;
     text-align: center;
-    margin-top: 10%;
+    margin-top: 5%;
     @media screen and (max-width: 360px) {
         width: 100%;
+    }
+    h2 {
+        margin-bottom: 20px;
     }
 
     form {
         display: flex;
         flex-direction: column;
 
-        label {
-            margin: 5px;
-        }
+        
 
         input {
             margin: 10px;

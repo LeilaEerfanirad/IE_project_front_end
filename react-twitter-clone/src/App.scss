@@ -6,8 +6,12 @@
 .app {
   font-family: 'Segoe UI', 'Times New Roman', 'Times New Roman', Times, serif;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   // flex-direction: row;
   background: #171717;
   color: white;
+  @media screen and (max-width: 360px) {
+    flex-direction: column;
+}
 }
