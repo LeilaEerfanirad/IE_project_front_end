@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 
 import { NavLink } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
+
+import 'css-doodle';
 const Profile = (props) => {
     const navigate = useNavigate();
     const handleEdit = () => {
@@ -16,17 +18,19 @@ const Profile = (props) => {
                 <button onClick={handleEdit} className='userProfileContainer__button'>Edit Profile</button>
             </div>
             
-            <p><strong>Username:</strong> {props.item.username}</p>
-            <p><strong>Email:</strong> {props.item.email}</p>
-            <p><strong>First Name:</strong> {props.item.firstname}</p>
-            <nav >
-                <NavLink  to='/followers'>
-                    <p><strong>Followers:</strong> {props.item.followers.length}</p>
-                </NavLink>
-                <NavLink to='/followings'>
-                    <p><strong>Following:</strong> {props.item.followings.length}</p>
-                </NavLink>
-            </nav>
+            <div className="userContainer__profileHeader--firstRow">
+                <p><strong>Username:</strong> {props.item.username}</p>
+                <p><strong>Email:</strong> {props.item.email}</p>
+                
+                <nav >
+                    <NavLink className="userContainer__profileHeader--nav" to='/followers'>
+                    <p ><strong>Followers:</strong> {props.item.followers.length}</p>
+                    </NavLink>
+                    <NavLink className="userContainer__profileHeader--nav" to='/followings'>
+                        <p ><strong>Following:</strong> {props.item.followings.length}</p>
+                    </NavLink>
+                </nav>
+            </div>
             
         </div>
         <div className="userProfileContainer__profileFooter">
