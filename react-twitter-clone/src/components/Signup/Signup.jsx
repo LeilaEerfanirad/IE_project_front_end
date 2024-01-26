@@ -38,7 +38,7 @@ const Signup = () => {
         <div className="signup-container">
             <h2>Sign Up</h2>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="username"></label>
+                {/* <label htmlFor="username"></label> */}
                 <input
                     placeholder="Username"
                     type="text"
@@ -49,7 +49,7 @@ const Signup = () => {
                     required
                 />
 
-                <label htmlFor="password"></label>
+                {/* <label htmlFor="password"></label> */}
                 <input
                     placeholder="Password"
                     type="password"
@@ -60,7 +60,7 @@ const Signup = () => {
                     required
                 />
 
-                <label htmlFor="email"></label>
+                {/* <label htmlFor="email"></label> */}
                 <input
                     placeholder="Email"
                     type="email"
@@ -71,7 +71,7 @@ const Signup = () => {
                     required
                 />
 
-                <label htmlFor="firstName"></label>
+                {/* <label htmlFor="firstName"></label> */}
                 <input
                     placeholder="First Name"
                     type="text"
@@ -82,7 +82,7 @@ const Signup = () => {
                     required
                 />
 
-                <label htmlFor="lastName"></label>
+                {/* <label htmlFor="lastName"></label> */}
                 <input
                     placeholder="Last Name"
                     type="text"

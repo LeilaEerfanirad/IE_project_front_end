@@ -8,7 +8,7 @@
 
     &__profileHeader{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         flex-wrap: wrap;
         background-color: antiquewhite;
     }
@@ -16,4 +16,8 @@
         background-color: aqua;
     }
     
+}
+.firstRow{
+    display: flex;
+    flex-direction: row;
 }

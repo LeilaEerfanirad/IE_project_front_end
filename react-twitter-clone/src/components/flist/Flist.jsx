@@ -3,7 +3,10 @@ import React from 'react'
 
 function Flist(props) {
   return (
-    <div>Flist</div>
+    <div>
+        {props.item.map(row => <div>{row.username}</div>)
+        }
+    </div>
   )
 }
 

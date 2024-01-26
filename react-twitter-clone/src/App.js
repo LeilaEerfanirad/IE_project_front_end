@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes, Switch } from 'react-router-dom';
-import { LeftPane , Profile , Login , Signup , Flist } from './components'
+import { LeftPane , Profile , Login , Signup , Flist , Edit } from './components'
 import './App.scss';
 import {useState} from 'react';
 
@@ -40,7 +40,7 @@ const App = () => {
           <Route path="/signup" element={<Signup />} />
           <Route path="/followers" element={<Flist item={user.followers}/>} />
           <Route path="/followings" element={<Flist item={user.followings}/>} />
-          {/* <Route path="/explore" element={<Profile />}>explore</Route> */}
+          <Route path="/edit" element={<Edit />}>explore</Route>
           <Route path="/notifications">Home</Route>
           <Route path="/profile" element={<Profile item={user}  />}>Home</Route>
           
