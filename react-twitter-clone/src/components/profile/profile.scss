@@ -47,9 +47,14 @@
         background-color: cadetblue;
         border: unset;
         border-radius: 20px;
-        margin-left: 1.5em;
+        margin-left: 2em;
         
         padding: 1em;
+        cursor: pointer;
+        &:hover {
+            background-color: rgb(28, 28, 67);
+            color: #fff;
+        }
     }
     
 }

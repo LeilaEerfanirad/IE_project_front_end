@@ -11,9 +11,9 @@ $font : 1.2em;
     font-size: 1.2em;
     line-height: 22px;
     min-height: 100vh;
-    @media screen and (max-width: 360px) {
+    @media screen and (max-width: 515px) {
         width: 100%;
-        $font: 1.9em;
+        font-size: 2em
     }
     &__container{
         
