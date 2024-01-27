@@ -7,10 +7,22 @@ import { useNavigate } from 'react-router-dom';
 import 'css-doodle';
 const Profile = () => {
     let user = JSON.parse(localStorage.getItem('user')) || [];
-
+    let logStatus = localStorage.getItem('isLogedin');
+    console.log(logStatus);
+    
     const navigate = useNavigate();
     const handleEdit = () => {
         navigate('/edit');
+    }
+    if (logStatus == "false"){
+        
+        window.alert('User not Log in');
+        navigate('/')
+        return (
+        <div>
+            
+        </div>
+        )
     }
     return (
     <div className="userProfileContainer">
@@ -40,10 +52,9 @@ const Profile = () => {
         </div>
             
             
-    </div>
-        
-        
+    </div>    
     );
+    
 };
 
 export default Profile;

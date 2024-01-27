@@ -12,12 +12,13 @@ const LeftPane = () => {
 
     const handleLogin = () => {
         navigate('/login');
+        
     }
     const handleLogout = () => {
         const confirm = window.confirm('Are you sure you want to log out?');
         // console.log(confirm);
         if(confirm){
-
+            localStorage.setItem('isLogedin', false);
         }
 
     }
@@ -34,7 +35,7 @@ const LeftPane = () => {
                 <nav >
                     <NavLink className='leftPane__container--leftNav' to='/profile'>
                         <BiUser className='leftPane__container--icon'/>
-                        Profile
+                         Profile
                     </NavLink>
                     <NavLink className='leftPane__container--leftNav' to='/home'>
                         <GoHome className='leftPane__container--icon'/>

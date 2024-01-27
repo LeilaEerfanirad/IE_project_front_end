@@ -17,6 +17,9 @@ const Login = () => {
         });
     };
 
+    const handleSubmit2 = async () => {
+        navigate('/signup');
+    };
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log('here');
@@ -36,7 +39,7 @@ const Login = () => {
         });
         console.log(c.user.followings);
         localStorage.setItem('user', JSON.stringify(c.user));
-
+        localStorage.setItem('isLogedin', true);
         navigate('/profile');
         
     };
@@ -67,7 +70,8 @@ const Login = () => {
                     required
                 />
 
-                <button type="submit" onClick={handleSubmit}>Login</button>
+                <button type="submit" onClick={handleSubmit}>Log in</button>
+                <button type="submit" onClick={handleSubmit2}>Sign up</button>
             </form>
         </div>
     );

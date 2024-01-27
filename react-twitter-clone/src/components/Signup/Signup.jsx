@@ -8,8 +8,8 @@ const Signup = () => {
         username: '',
         password: '',
         email: '',
-        firstName: '',
-        lastName: ''
+        firstname: '',
+        lastname: ''
     });
 
     const handleChange = (e) => {
@@ -20,9 +20,13 @@ const Signup = () => {
         });
     };
 
+    const handleSubmit2 = async () => {
+        navigate('/login');
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        
+        const c = "";
         fetch(
             `http://localhost:3000/register?username=${formData.username}&password=${formData.password}&email=${formData.email}&firstname=${formData.firstName}&lastname=${formData.lastName}`
             , {
@@ -30,11 +34,15 @@ const Signup = () => {
         })
         .then(response => response.json())
         .then(data => {
+            c = data;
             console.log(data);
         })
         .catch(error => {
             console.error('Error:', error);
         });
+        console.log(c);
+        localStorage.setItem('user', JSON.stringify(formData));
+        localStorage.setItem('isLogedin', true);
         navigate('/profile');
     };
 
@@ -97,7 +105,8 @@ const Signup = () => {
                     required
                 />
 
-                <button type="submit">Sign Up</button>
+                <button type="submit" onClick={handleSubmit}>Sign Up</button>
+                <button type="submit" onClick={handleSubmit2}>Log in</button>
             </form>
         </div>
     );

@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes, Switch } from 'react-router-dom';
 import { LeftPane , Profile , Login , Signup , Flist , Edit , Explore } from './components'
 import './App.scss';
-import {useState} from 'react';
+import React, { useEffect, useState } from 'react';
 
 const App = () => {
   const userr = {
@@ -31,7 +31,10 @@ const App = () => {
     password : "1112"
 };
 let user = JSON.parse(localStorage.getItem('user')) || [];
-
+console.log(user);
+if (user == null){
+  user = userr;
+}
   return (
     <BrowserRouter>
       <div className="app">
@@ -40,8 +43,8 @@ let user = JSON.parse(localStorage.getItem('user')) || [];
           <Route path="/" exact></Route>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/followers" element={<Flist item={user.followers}/>} />
-          <Route path="/followings" element={<Flist item={user.followings}/>} />
+          <Route path="/followers" element={<Flist item='followers'/>} />
+          <Route path="/followings" element={<Flist item='followings'/>} />
           <Route path="/edit" element={<Edit />}></Route>
           <Route path="/notifications">Home</Route>
           <Route path="/explore" element={<Explore/>}>Home</Route>
