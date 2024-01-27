@@ -4,7 +4,7 @@ import './App.scss';
 import {useState} from 'react';
 
 const App = () => {
-  const user = {
+  const userr = {
     firstname : "leila",
     followings : [
       {
@@ -30,6 +30,8 @@ const App = () => {
     username : "aaa",
     password : "1112"
 };
+let user = JSON.parse(localStorage.getItem('user')) || [];
+
   return (
     <BrowserRouter>
       <div className="app">
@@ -43,7 +45,7 @@ const App = () => {
           <Route path="/edit" element={<Edit />}></Route>
           <Route path="/notifications">Home</Route>
           <Route path="/explore" element={<Explore/>}>Home</Route>
-          <Route path="/profile" element={<Profile item={user}  />}>Home</Route>
+          <Route path="/profile" element={<Profile />}>Home</Route>
           
         </Routes>
         {/* <div>

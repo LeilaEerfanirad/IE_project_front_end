@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './signup.scss'
+import { useNavigate } from 'react-router-dom';
 const Signup = () => {
+    const navigate = useNavigate();
+    
     const [formData, setFormData] = useState({
         username: '',
         password: '',
@@ -32,6 +35,7 @@ const Signup = () => {
         .catch(error => {
             console.error('Error:', error);
         });
+        navigate('/profile');
     };
 
     return (

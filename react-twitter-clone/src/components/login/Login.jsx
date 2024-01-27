@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Login.scss'
 const Login = () => {
+    const navigate = useNavigate();
+    
     const [formData, setFormData] = useState({
         username: '',
         password: ''
@@ -31,7 +34,10 @@ const Login = () => {
         .catch(error => {
             console.error('Error:', error);
         });
-        console.log(c.user._id);
+        console.log(c.user.followings);
+        localStorage.setItem('user', JSON.stringify(c.user));
+
+        navigate('/profile');
         
     };
 

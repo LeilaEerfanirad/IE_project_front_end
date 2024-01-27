@@ -1,6 +1,10 @@
 import React , { useState } from 'react'
 import './edit.scss'
+import { useNavigate } from 'react-router-dom';
 function Edit() {
+    let user = JSON.parse(localStorage.getItem('user')) || [];
+
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         username: '',
         firstname: '',
@@ -18,15 +22,24 @@ function Edit() {
     function handleSubmit () {
         
         console.log('here')
+        const c = "aa";
         fetch(
-            'http://localhost:3000/edit?username=${formData.username}&firstname=${formData.firstname}&lastname=${formData.lastname}'
+            `http://localhost:3000/edit?email=${user.email}username=${formData.username}&firstname=${formData.firstname}&lastname=${formData.lastname}`
             , {
             method: 'POST'
         })
         .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(error => console.error(error));
-        
+        .then(data => {
+            c = data
+            // console.log(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+        console.log(c.user.followings);
+        localStorage.setItem('user', JSON.stringify(c.user));
+
+        navigate('/profile');
     };
 
     return (
@@ -61,7 +74,7 @@ function Edit() {
                     onChange={handleChange}
                     required
                 />
-                <button type="submit">Edit</button>
+                <button type="submit" onClick={handleSubmit}>Edit</button>
             </form>
             
         </div>
