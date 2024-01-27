@@ -21,7 +21,7 @@ const Signup = () => {
         e.preventDefault();
         
         fetch(
-            'http://localhost:3000/register?username=${formData.username}&password=${formData.password}&email=${formData.email}&firstname=${formData.firstName}&lastname=${formData.lastName}'
+            `http://localhost:3000/register?username=${formData.username}&password=${formData.password}&email=${formData.email}&firstname=${formData.firstName}&lastname=${formData.lastName}`
             , {
             method: 'POST'
         })

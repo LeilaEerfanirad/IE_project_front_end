@@ -14,17 +14,24 @@ const Login = () => {
         });
     };
 
-    function handleSubmit () {
-        // e.preventDefault();
-        console.log('here')
-        fetch(
-            'http://localhost:3000/login?username=${formData.username}&password=${formData.password}'
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        console.log('here');
+        let c = "aa";
+        const a = await fetch(
+            `http://localhost:3000/login?username=${formData.username}&password=${formData.password}`
             , {
             method: 'POST'
         })
         .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(error => console.error(error));
+        .then(data => {
+            c = data
+            // console.log(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+        console.log(c.user._id);
         
     };
 
