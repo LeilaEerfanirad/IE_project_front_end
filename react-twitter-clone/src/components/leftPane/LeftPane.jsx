@@ -13,6 +13,14 @@ const LeftPane = () => {
     const handleLogin = () => {
         navigate('/login');
     }
+    const handleLogout = () => {
+        const confirm = window.confirm('Are you sure you want to log out?');
+        // console.log(confirm);
+        if(confirm){
+
+        }
+
+    }
     const handleSignup = () => {
         navigate('/signup');
     }
@@ -46,7 +54,7 @@ const LeftPane = () => {
                 </footer>
                 <button onClick={handleLogin} className='leftPane__container--button'>Login</button>
                 <button onClick={handleSignup} className='leftPane__container--button'>Sign Up</button>
-                <button className='leftPane__container--button'>Log Out</button>
+                <button onClick={handleLogout} className='leftPane__container--button'>Log Out</button>
            
             </div>
         </div>
