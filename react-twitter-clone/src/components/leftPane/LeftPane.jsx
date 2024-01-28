@@ -14,6 +14,10 @@ const LeftPane = () => {
         navigate('/login');
         
     }
+    const handleTweet = () => {
+        navigate('/tweet');
+        
+    }
     const handleLogout = () => {
         const confirm = window.confirm('Are you sure you want to log out?');
         // console.log(confirm);
@@ -51,7 +55,7 @@ const LeftPane = () => {
                     </NavLink>
                 </nav>
                 <footer>  
-                    <button className='leftPane__container--button'>Tweet</button>
+                    <button onClick={handleTweet} className='leftPane__container--button'>Tweet</button>
                 </footer>
                 <button onClick={handleLogin} className='leftPane__container--button'>Login</button>
                 <button onClick={handleSignup} className='leftPane__container--button'>Sign Up</button>

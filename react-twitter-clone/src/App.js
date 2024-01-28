@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes, Switch } from 'react-router-dom';
-import { LeftPane , Profile , Login , Signup , Flist , Edit , Explore } from './components'
+import { LeftPane , Profile , Login , Signup , Flist , Edit , Explore ,Tweet } from './components'
 import './App.scss';
 import React, { useEffect, useState } from 'react';
 
@@ -49,6 +49,7 @@ if (user == null){
           <Route path="/notifications">Home</Route>
           <Route path="/explore" element={<Explore/>}>Home</Route>
           <Route path="/profile" element={<Profile />}>Home</Route>
+          <Route path="/tweet" element={<Tweet />}>Home</Route>
           
         </Routes>
         {/* <div>
