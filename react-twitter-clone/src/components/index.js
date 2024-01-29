@@ -8,3 +8,4 @@ export { default as Explore } from './explore/Explore';
 export { default as Tweet } from './Tweet/Tweet';
 export { default as Post } from './post/Post';
 export { default as Notification } from './notification/Notification';
+export { default as Frow } from './frow/Frow';

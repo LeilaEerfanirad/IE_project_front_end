@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { NavLink } from 'react-router-dom'
 function Post(props) {
   const navigate = useNavigate();
+  const username = JSON.parse(localStorage.getItem('user')) || [];
   
   const handleDelete = async (e) => {
     // window.alert('hello');
@@ -37,7 +38,8 @@ function Post(props) {
         <p>{props.item.text}</p>
         <div><NavLink className='postContainer__nav' to='/likes'>{props.item.likes.length}</NavLink> <FcLikePlaceholder /></div>
         <div><NavLink className='postContainer__nav' to='/retweets'>{props.item.retweets.length}</NavLink> <FaRetweet /></div>
-        <RiDeleteBinLine onClick={handleDelete}/>
+        {(props.item.username == username.username) ? <RiDeleteBinLine onClick={handleDelete}/> : ''}
+        
     </div>
   )
 }

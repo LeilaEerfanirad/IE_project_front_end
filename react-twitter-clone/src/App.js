@@ -46,7 +46,7 @@ const App = () => {
           <Route path="/followers" element={<Flist item='followers'/>} />
           <Route path="/followings" element={<Flist item='followings'/>} />
           <Route path="/edit" element={<Edit />}></Route>
-          <Route path="/notification" element={<Notification/>}>Home</Route>
+          <Route path="/notifications" element={<Notification/>}>Home</Route>
           <Route path="/explore" element={<Explore/>}>Home</Route>
           <Route path="/profile" element={<Profile />}>Home</Route>
           <Route path="/tweet" element={<Tweet />}>Home</Route>

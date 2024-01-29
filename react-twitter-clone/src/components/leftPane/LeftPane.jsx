@@ -8,6 +8,29 @@ import { BiUser } from "react-icons/bi";
 import { GoHome } from "react-icons/go";
 import { IoMdNotificationsOutline } from "react-icons/io";
 const LeftPane = () => {
+    const user = JSON.parse(localStorage.getItem('user')) || [];
+    
+    const handleRecent = async (e) => {
+        e.preventDefault();
+        const c = "";
+        const a = await fetch(
+            `http://localhost:3000/recent?email=${user.email}`
+            , {
+            method: 'POST'
+        })
+        .then(response => response.json())
+        .then(data => {
+            c = data
+            console.log(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+        localStorage.setItem('recent', JSON.stringify(c));
+        navigate('/notifications')
+
+    }
+
     const navigate = useNavigate();
 
     const handleLogin = () => {
@@ -29,6 +52,8 @@ const LeftPane = () => {
     const handleSignup = () => {
         navigate('/signup');
     }
+
+
     
     return (
         <div className='leftPane'>
@@ -49,7 +74,7 @@ const LeftPane = () => {
                         <MdOutlineSearch className='leftPane__container--icon'/>    
                         Explore
                     </NavLink>
-                    <NavLink className='leftPane__container--leftNav' to='/notification'>
+                    <NavLink className='leftPane__container--leftNav' onClick={handleRecent} to='/notification'>
                         <IoMdNotificationsOutline className='leftPane__container--icon'/>
                         Notification
                     </NavLink>
