@@ -3,11 +3,13 @@ import './explore.scss'
 import Flist from '../flist/Flist';
 function Explore() {
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const s = document.getElementById('search_input');
-    const result = "a";
-    fetch(
+    const s = document.getElementById('search_input').value;
+    let result = "a";
+    console.log(s);
+    console.log("searchhhhh");
+    await fetch(
         `http://localhost:3000/search?str=${s}`
         , {
         method: 'POST'
@@ -32,7 +34,7 @@ function Explore() {
         />
       </div>
       <div>
-        <button className='exploreContainer__button'>Search</button>
+        <button className='exploreContainer__button' onClick={handleSubmit}>Search</button>
       {/* <Flist item='/> */}
       </div>
      

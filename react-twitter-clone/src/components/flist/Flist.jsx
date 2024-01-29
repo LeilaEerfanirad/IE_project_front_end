@@ -11,12 +11,7 @@ function Flist(props) {
   if (props.item == 'followings'){
     print = user.followings;
   }
-  // print.forEach(element => {
-  //   btn_value.push(user.followings.includes(element) ? "unfollow" : "follow");
-  // });
-  // if (props.item == 'search'){
-    
-  // }
+
   console.log(print);
   return (
     <div className='f_container'>
