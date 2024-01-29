@@ -3,8 +3,9 @@ import React from 'react'
 function Frow(props) {
   let user = JSON.parse(localStorage.getItem('user')) || [];
   let btn_value = user.followings.includes(props.item) ? "unfollow" : "follow";
-  console.log(btn_value);
+  
   let method = "";
+ 
   if (btn_value == 'follow'){
     method = 'POST';
   }else{
@@ -22,11 +23,13 @@ function Frow(props) {
     .then(response => response.json())
     .then(data => {
         c = data
-        // console.log(data);
+        console.log(data);
     })
     .catch(error => {
         console.error('Error:', error);
     });
+    console.log(c);
+    localStorage.setItem('user',c.user);
     
 };
   
