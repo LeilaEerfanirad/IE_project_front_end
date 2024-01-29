@@ -1,0 +1,15 @@
+
+.userProfileContainer {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    font-size: 1.2em;
+    align-items: center;
+    text-align: left;
+    padding: 1em;
+    margin-top: 5%;
+
+    @media screen and (max-width: 360px) {
+        width: 100%;
+    }
+}

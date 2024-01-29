@@ -1,40 +1,10 @@
 import { BrowserRouter, Route, Routes, Switch } from 'react-router-dom';
-import { LeftPane , Profile , Login , Signup , Flist , Edit , Explore ,Tweet , Notification } from './components'
+import { LeftPane , Profile , Login , Signup , Flist , Edit , Explore ,Tweet , Home , Notification } from './components'
 import './App.scss';
 import React, { useEffect, useState } from 'react';
 
 const App = () => {
-  const userr = {
-    firstname : "leila",
-    followings : [
-      {
-        username : "@darya"
-      },
-      {
-        username : "@ghazal"
-      },
-      {
-        username : "@mahsa"
-      }
-    ],
-    followers : [
-      {
-        username : "@darya1"
-      },
-      {
-        username : "@ghazal1"
-      }
-    ],
-    lastname : "erfani",
-    email : "leila.erfanirad@gmail.com",
-    username : "aaa",
-    password : "1112"
-};
-// let user = JSON.parse(localStorage.getItem('user')) || [];
-// console.log(user);
-// if (user == null){
-//   user = userr;
-// }
+  
   return (
     <BrowserRouter>
       <div className="app">
@@ -50,6 +20,7 @@ const App = () => {
           <Route path="/explore" element={<Explore/>}>Home</Route>
           <Route path="/profile" element={<Profile />}>Home</Route>
           <Route path="/tweet" element={<Tweet />}>Home</Route>
+          <Route path="/home" element={<Home />}>Home</Route>
           
         </Routes>
         {/* <div>
