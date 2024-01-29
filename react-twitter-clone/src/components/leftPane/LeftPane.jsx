@@ -32,6 +32,29 @@ const LeftPane = () => {
 
     }
 
+    const handleHome = async (e) => {
+        e.preventDefault();
+        console.log("meee")
+        let c = "";
+        const a = await fetch(
+            `http://localhost:3000/following-tweet?email=${user.email}`
+            , {
+            method: 'POST'
+        })
+        .then(response => response.json())
+        .then(data => {
+            c = data
+            console.log(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+
+        localStorage.setItem('homeValue', JSON.stringify(c));
+        navigate('/home')
+
+    }
+
     const navigate = useNavigate();
 
     const handleLogin = () => {
@@ -67,7 +90,7 @@ const LeftPane = () => {
                         <BiUser className='leftPane__container--icon'/>
                          Profile
                     </NavLink>
-                    <NavLink className='leftPane__container--leftNav' to='/home'>
+                    <NavLink className='leftPane__container--leftNav' onClick={handleHome} to='/home'>
                         <GoHome className='leftPane__container--icon'/>
                         Home
                     </NavLink>

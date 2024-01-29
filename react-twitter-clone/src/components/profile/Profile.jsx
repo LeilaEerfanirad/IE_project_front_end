@@ -15,16 +15,15 @@ const Profile = () => {
     const handleEdit = () => {
         navigate('/edit');
     }
-    if (logStatus == "false"){
-        
-        window.alert('User not Log in');
-        navigate('/')
-        return (
-        <div>
-            
-        </div>
-        )
-    }
+    useEffect(() => {
+        let user = JSON.parse(localStorage.getItem('user')) || [];
+        let logStatus = localStorage.getItem('isLogedin');
+        console.log(logStatus);
+        if (logStatus == "false") {
+          window.alert('User not Log in');
+          navigate('/');
+        }
+      }, []);
     return (
     <div className="userProfileContainer">
         <div className="userProfileContainer__profileHeader">
