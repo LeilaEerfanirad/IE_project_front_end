@@ -1,6 +1,6 @@
 import './profile.scss'
 import React, { useEffect, useState } from 'react';
-
+import Post from '../post/Post.jsx';
 import { NavLink } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 
@@ -8,8 +8,9 @@ import 'css-doodle';
 const Profile = () => {
     let user = JSON.parse(localStorage.getItem('user')) || [];
     let logStatus = localStorage.getItem('isLogedin');
-    console.log(logStatus);
-    
+    // console.log(logStatus);
+    let posts = user.tweets;
+    // console.log(posts[0])
     const navigate = useNavigate();
     const handleEdit = () => {
         navigate('/edit');
@@ -48,7 +49,7 @@ const Profile = () => {
             
         </div>
         <div className="userProfileContainer__profileFooter">
-
+            {posts.map(row => <Post item={row}/>)}
         </div>
             
             

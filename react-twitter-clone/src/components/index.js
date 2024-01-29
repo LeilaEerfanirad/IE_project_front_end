@@ -6,3 +6,4 @@ export { default as Flist } from './flist/Flist';
 export { default as Edit } from './edit/Edit';
 export { default as Explore } from './explore/Explore';
 export { default as Tweet } from './Tweet/Tweet';
+export { default as Post } from './post/Post';

@@ -1,0 +1,16 @@
+.postContainer {
+    background-color: rgb(15, 99, 110);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    // width: 50%;
+    font-size: 1.2em;
+    align-items: left;
+    text-align: left;
+    padding: 1em;
+    margin-top: 5%;
+
+    @media screen and (max-width: 360px) {
+        width: 100%;
+    }
+}

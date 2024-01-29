@@ -24,7 +24,7 @@ function Edit() {
         console.log('here')
         const c = "aa";
         fetch(
-            `http://localhost:3000/edit?email=${user.email}username=${formData.username}&firstname=${formData.firstname}&lastname=${formData.lastname}`
+            `http://localhost:3000/profile?email=${user.email}username=${formData.username}&firstname=${formData.firstname}&lastname=${formData.lastname}`
             , {
             method: 'POST'
         })
@@ -38,7 +38,7 @@ function Edit() {
         });
         console.log(c.user.followings);
         localStorage.setItem('user', JSON.stringify(c.user));
-
+        // user = JSON.parse(localStorage.getItem('user')) || [];
         navigate('/profile');
     };
 
@@ -68,9 +68,9 @@ function Edit() {
                 <input
                     placeholder='Last Name'
                     type="text"
-                    id="firstName"
-                    name="firstName"
-                    value={formData.firstName}
+                    id="lastName"
+                    name="lastName"
+                    value={formData.lastName}
                     onChange={handleChange}
                     required
                 />

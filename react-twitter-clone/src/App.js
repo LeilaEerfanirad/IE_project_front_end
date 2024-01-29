@@ -30,11 +30,11 @@ const App = () => {
     username : "aaa",
     password : "1112"
 };
-let user = JSON.parse(localStorage.getItem('user')) || [];
-console.log(user);
-if (user == null){
-  user = userr;
-}
+// let user = JSON.parse(localStorage.getItem('user')) || [];
+// console.log(user);
+// if (user == null){
+//   user = userr;
+// }
   return (
     <BrowserRouter>
       <div className="app">
