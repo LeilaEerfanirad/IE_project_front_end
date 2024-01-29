@@ -16,9 +16,9 @@ function Post(props) {
     console.log('here');
     let c = "aa";
     const a = await fetch(
-        `http://localhost:3000/tweet?text=${props.item.text}&title=${props.item.title}&email=${props.item.email}`
+        `http://localhost:3000/etweet?text=${props.item.text}&title=${props.item.title}&email=${props.item.email}`
         , {
-        method: 'DELETE'
+        method: 'POST'
     })
     .then(response => response.json())
     .then(data => {
@@ -28,7 +28,7 @@ function Post(props) {
     .catch(error => {
         console.error('Error:', error);
     });
-    
+    // localStorage.setItem('user',c.user)
     
 };
 

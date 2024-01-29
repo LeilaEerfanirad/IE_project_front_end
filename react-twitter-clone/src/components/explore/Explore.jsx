@@ -17,11 +17,12 @@ function Explore() {
     .then(response => response.json())
     .then(data => {
         result = data;
-        console.log(data);
+        // console.log(data);
     })
     .catch(error => {
         console.error('Error:', error);
     });
+    console.log(result.user);
     // navigate('/profile');
   };
   return (

@@ -12,11 +12,12 @@ const LeftPane = () => {
     
     const handleRecent = async (e) => {
         e.preventDefault();
-        const c = "";
+        console.log("meee")
+        let c = "";
         const a = await fetch(
             `http://localhost:3000/recent?email=${user.email}`
             , {
-            method: 'POST'
+            method: 'GET'
         })
         .then(response => response.json())
         .then(data => {
