@@ -33,19 +33,24 @@ const Profile = () => {
                 <button onClick={handleEdit} className='userProfileContainer__button'>Edit Profile</button>
             </div>
             
-            <div className="userContainer__profileHeader--firstRow">
+            <div className="userProfileContainer__profileHeader--firstRow">
                 <p><strong>Username:</strong> {user.username}</p>
+            </div>
+            <div className="userProfileContainer__profileHeader--firstRow">
                 <p><strong>Email:</strong> {user.email}</p>
+            </div>
                 
+            <div className="userProfileContainer__profileHeader--firstRow">
                 <nav >
-                    <NavLink className="userContainer__profileHeader--nav" to='/followers'>
-                    <p ><strong>Followers:</strong> {user.followers.length}</p>
+                    <NavLink className="userProfileContainer__profileHeader--nav" to='/followers'>
+                        Followers: {user.followers.length}
                     </NavLink>
-                    <NavLink className="userContainer__profileHeader--nav" to='/followings'>
-                        <p ><strong>Following:</strong> {user.followings.length}</p>
+                    <NavLink className="userProfileContainer__profileHeader--nav" to='/followings'>
+                        Following: {user.followings.length}
                     </NavLink>
                 </nav>
             </div>
+           
             
         </div>
         <div className="userProfileContainer__profileFooter">

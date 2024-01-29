@@ -23,19 +23,18 @@
         &--firstRow {
             display: flex;
             flex-direction: row;
-            // background-color: aqua;
-
-            
+            flex-wrap: wrap;
         }
         &--nav {
             margin-top: 10%;
-            color: #fff;
+            color: #9ef0f5;
+            // border-radius: 20px;
             align-items: center;
             text-decoration:inherit;
             text-decoration-line: none;
             display: flex;
             flex-direction: row;
-            background-color: aquamarine;
+            // background-color: aquamarine;
         }
 
     }
