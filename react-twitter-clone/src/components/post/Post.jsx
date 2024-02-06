@@ -32,12 +32,51 @@ function Post(props) {
     
 };
 
+const handleRetweet = async (e) => {
+  e.preventDefault();
+  console.log('here');
+  let c = "aa";
+  const a = await fetch(
+      `http://localhost:3000/retweet?text=${props.item.text}&title=${props.item.title}&email=${props.item.email}`
+      , {
+      method: 'POST'
+  })
+  .then(response => response.json())
+  .then(data => {
+      c = data
+      console.log(data);
+  })
+  .catch(error => {
+      console.error('Error:', error);
+  });
+  // localStorage.setItem('user',c.user)
+}
+const handleLikeTweet = async (e) => {
+  e.preventDefault();
+  console.log('here');
+  let c = "aa";
+  const a = await fetch(
+      `http://localhost:3000/like?text=${props.item.text}&title=${props.item.title}&email=${props.item.email}`
+      , {
+      method: 'POST'
+  })
+  .then(response => response.json())
+  .then(data => {
+      c = data
+      console.log(data);
+  })
+  .catch(error => {
+      console.error('Error:', error);
+  });
+  // localStorage.setItem('user',c.user)
+}
+
   return (
     <div className='postContainer'>
         <h2>{props.item.title}</h2>
         <p>{props.item.text}</p>
-        <div><NavLink className='postContainer__nav' to='/likes'>{props.item.likes.length}</NavLink> <FcLikePlaceholder /></div>
-        <div><NavLink className='postContainer__nav' to='/retweets'>{props.item.retweets.length}</NavLink> <FaRetweet /></div>
+        <div><NavLink className='postContainer__nav' to='/likes'>{props.item.likes.length}</NavLink> <FcLikePlaceholder onClick={handleLikeTweet}/></div>
+        <div><NavLink className='postContainer__nav' to='/retweets'>{props.item.retweets.length}</NavLink> <FaRetweet onClick={handleRetweet} /></div>
         {(props.item.username == username.username) ? <RiDeleteBinLine onClick={handleDelete}/> : ''}
         
     </div>

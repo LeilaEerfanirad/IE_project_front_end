@@ -10,14 +10,14 @@ const Profile = () => {
     let logStatus = localStorage.getItem('isLogedin');
     // console.log(logStatus);
     let posts = user.tweets;
-    // console.log(posts[0])
+    console.log(user.followers.length)
     const navigate = useNavigate();
     const handleEdit = () => {
         navigate('/edit');
     }
     useEffect(() => {
         let user = JSON.parse(localStorage.getItem('user')) || [];
-        let logStatus = localStorage.getItem('isLogedin');
+        let logStatus = localStorage.getItem('isLogedin') || false;
         console.log(logStatus);
         if (logStatus == "false") {
           window.alert('User not Log in');
@@ -53,7 +53,7 @@ const Profile = () => {
             
         </div>
         <div className="userProfileContainer__profileFooter">
-            {posts.map(row => <Post item={row}/>)}
+        {(posts.length == 0 )? "" : posts.map((row, index) => <Post key={index} item={row}/>)}
         </div>
             
             

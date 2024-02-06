@@ -43,7 +43,7 @@ const Signup = () => {
         console.log(c);
         localStorage.setItem('user', JSON.stringify(formData));
         localStorage.setItem('isLogedin', true);
-        navigate('/profile');
+        navigate('/login');
     };
 
     return (

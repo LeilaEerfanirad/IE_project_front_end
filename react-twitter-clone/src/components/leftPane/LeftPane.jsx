@@ -51,7 +51,7 @@ const LeftPane = () => {
         });
 
         localStorage.setItem('homeValue', JSON.stringify(c));
-        navigate('/home')
+        // navigate('/home')
 
     }
 

@@ -10,7 +10,7 @@ const Tweet = () => {
   });
   let user = JSON.parse(localStorage.getItem('user')) || [];
   let logStatus = localStorage.getItem('isLogedin');
-  console.log(logStatus);
+  // console.log(logStatus);
   
 
   
@@ -35,11 +35,11 @@ const Tweet = () => {
         method: 'POST'
         })
         .then((response) => response.json())
-        .then((data) => {console.log(data);
-        c = data;
+        .then((data) => {
+          c = data;
         })
         .catch((error) => console.error('Error:', error));
-        // localStorage.setItem('user',c.user);
+        localStorage.setItem('user', JSON.stringify(c.user));
         navigate('/profile'); 
     }
   };

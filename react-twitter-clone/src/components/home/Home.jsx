@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 function Home() {
     const navigate = useNavigate();
     let posts = [];
-    posts = localStorage.getItem('homeValue') || [];
+    posts = JSON.parse(localStorage.getItem('homeValue')) || [];
     posts = posts.values
     useEffect(() => {
         let user = JSON.parse(localStorage.getItem('user')) || [];

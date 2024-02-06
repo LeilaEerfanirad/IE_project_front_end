@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './frow.scss';
 function Frow(props) {
   let user = JSON.parse(localStorage.getItem('user')) || [];
   let btn_value = user.followings.includes(props.item) ? "unfollow" : "follow";
@@ -23,13 +23,14 @@ function Frow(props) {
     .then(response => response.json())
     .then(data => {
         c = data
-        console.log(data);
+        // console.log(data.user);
     })
     .catch(error => {
         console.error('Error:', error);
     });
-    console.log(c);
-    localStorage.setItem('user',c.user);
+    console.log("ffffffff")
+    console.log(c.user);
+    localStorage.setItem('user',JSON.stringify(c.user));
     
 };
   

@@ -59,18 +59,18 @@ function Edit() {
                 <input
                     placeholder="First Name"
                     type="text"
-                    id="firstName"
-                    name="firstName"
-                    value={formData.firstName}
+                    id="firstname"
+                    name="firstname"
+                    value={formData.firstname}
                     onChange={handleChange}
                     required
                 />
                 <input
                     placeholder='Last Name'
                     type="text"
-                    id="lastName"
-                    name="lastName"
-                    value={formData.lastName}
+                    id="lastname"
+                    name="lastname"
+                    value={formData.lastname}
                     onChange={handleChange}
                     required
                 />
